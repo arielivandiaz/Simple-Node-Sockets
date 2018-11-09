@@ -20,15 +20,8 @@ module.exports = function (app,io) {
 		   io.sockets.emit('new message', {message: message});
 		});
 	 });
-	 
-	
-	io.on('connection', function (socket) {
-		socket.emit('news', { hello: 'world' });
-		socket.on('my other event', function (data) {
-			console.log(data);
-		});
-	});
-	
+	 	
+
 
 	let log = "Log: ";
 	// Index
@@ -37,40 +30,10 @@ module.exports = function (app,io) {
 
 
 		res.render('index.ejs', {
-			message: 'Hello Node World',
-			log: log
+			message: 'Hello Node World',	
 		});
 	});
 
-
-	app.post('/', function (req, res) {
-
-		run(cmd.step_4).then((resolve) => {
-
-
-		}).catch(function (reject) {
-
-
-		});
-
-	});
-
-
-	app.get('/success', function (req, res) {
-
-		res.render('index.ejs', {
-			message: 'SUCCESS',
-			log: log
-		});
-	});
-
-	app.get('/failed', function (req, res) {
-
-		res.render('index.ejs', {
-			message: 'FAILED',
-			log: log
-		});
-	});
 
 
 
