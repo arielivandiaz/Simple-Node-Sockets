@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<%- include partials/header.ejs %>
+
+<body>
+    <div class=" text-center center-block">
+        <h1>
+            <%= message %>
+        </h1>
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <form action="/" method="post">
+                    <div class="input-group ">
+                        <button type="submit" class="btn btn-primary btn-lg offset-5" id="btn_log_login">Run</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <p>
+                    <% for (var i in log) { %>
+
+                    <% if (log[i] == '<') { %>
+                </p>
+                <p>
+                    <% } %>
+                    <%= log[i] %>              
+                <% } %>
+            </p>
+            </div>
+            <div class="col-lg-4"></div>
+        </div>
+    </div>
+
+</body>
+<%- include partials/footer.ejs %>
+
+</html>
